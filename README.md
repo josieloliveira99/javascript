@@ -1,10 +1,6 @@
-# Query Strings
+# Bibliotecas
 
----
-
-## bibliotecas
-
----
+## Query Strings
 
 [URLSearchParams](https://developer.mozilla.org/pt-BR/docs/Web/API/URLSearchParams)
 
