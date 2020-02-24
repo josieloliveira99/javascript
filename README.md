@@ -91,3 +91,44 @@ class Profile extends React.Component {
 }
 
 ```
+
+## Customizando link da rota ativa
+
+```javascript
+
+render() {
+  return (
+    <Router>
+      <div>
+        <OldSchoolMenuLink exact={true} to="/">
+          Home
+        </OldSchoolMenuLink>
+        <OldSchoolMenuLink to="/about">
+          About
+        </OldSchoolMenuLink>
+
+        <hr/>
+
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+      </div>
+    </Router>
+  )
+}
+
+...
+
+const OldSchoolMenuLink = ({ children, to, exact }) => {
+  const match = window.location.pathname === to
+
+  return (
+    <div className={match ? 'active' : ''}>
+      {match ? '> ' : ''}
+      <Link to={to}>
+        {children}
+      </Link>
+    </div>
+  )
+}
+
+```
