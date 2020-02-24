@@ -59,6 +59,10 @@ render() {
 
 ```javascript
 
+<Route path='/:handle' component={Profile} />
+
+...
+
 <Link to={{
   pathname: '/tylermcginnis',
   state: {
