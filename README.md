@@ -27,10 +27,10 @@ componentDidMount() {
 
 # React snippets
 
-## Router
+## Router 404
 
 ```javascript
-
+{/*dentro do <Switch> apenas a primeira rota com match é renderizada*/}
 render() {
   <Router>
     <div>
@@ -51,6 +51,39 @@ render() {
       </Switch>
     </div>
   </Router>
+}
+
+```
+
+## Passando dados de forma dinâmica através das rotas
+
+```javascript
+
+<Link to={{
+  pathname: '/tylermcginnis',
+  state: {
+    fromNotifications: true
+  }
+}}>Tyler McGinnis</Link>
+
+...
+
+class Profile extends React.Component {
+  state = {
+    user: null
+  }
+  componentDidMount () {
+    const { handle } = this.props.match.params
+    const { fromNotifications } = this.props.location.state
+
+    fetch(`https://api.twitter.com/user/${handle}`)
+      .then((user) => {
+        this.setState(() => ({ user }))
+      })
+  }
+  render() {
+    ...
+  }
 }
 
 ```
