@@ -184,3 +184,15 @@ export default App;
 </pre>
 
 ```
+
+## Dynamic import
+
+```javascript
+
+if (editPost === true) {
+  import('./editpost')
+    .then((module) => module.showEditor())
+    .catch((e) => )
+}
+
+```
