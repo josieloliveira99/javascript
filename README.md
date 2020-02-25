@@ -128,6 +128,49 @@ async function requestPets() {
 
 ```
 
+## HOC
+
+[HOC](https://www.codingame.com/playgrounds/8595/reactjs-higher-order-components-tutorial)
+
+```javascript
+
+import React, {Component} from 'react';
+
+export default function Hoc(HocComponent){
+    return class extends Component{
+        render(){
+            return (
+                <div>
+                    <HocComponent></HocComponent>
+                </div>
+
+            );
+        }
+    } 
+}
+
+...
+
+// App.js
+
+import React, { Component } from 'react';
+import Hoc from './HOC';
+
+class App extends Component {
+  
+  render() {
+    return (
+      <div>
+        Higher-Order Component Tutorial
+      </div>
+    )
+  }
+}
+App = Hoc(App);
+export default App;
+
+```
+
 ## Stringify props
 
 ```javascript
