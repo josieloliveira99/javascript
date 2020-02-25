@@ -96,43 +96,30 @@ class Profile extends React.Component {
 
 ```
 
-## Customizando link da rota ativa
+## Async requests com hooks
 
 ```javascript
 
-render() {
-  return (
-    <Router>
-      <div>
-        <OldSchoolMenuLink exact={true} to="/">
-          Home
-        </OldSchoolMenuLink>
-        <OldSchoolMenuLink to="/about">
-          About
-        </OldSchoolMenuLink>
+// inside render
+const [pets, setPets] = useState([]);
 
-        <hr/>
+// below state declarations
+async function requestPets() {
+  const { animals } = await pet.animals({
+    location,
+    breed,
+    type: animal
+  });
 
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-      </div>
-    </Router>
-  )
+  setPets(animals || []);
 }
 
-...
-
-const OldSchoolMenuLink = ({ children, to, exact }) => {
-  const match = window.location.pathname === to
-
-  return (
-    <div className={match ? 'active' : ''}>
-      {match ? '> ' : ''}
-      <Link to={to}>
-        {children}
-      </Link>
-    </div>
-  )
-}
+// replace <form>
+<form
+  onSubmit={e => {
+    e.preventDefault();
+    requestPets();
+  }}
+>
 
 ```
