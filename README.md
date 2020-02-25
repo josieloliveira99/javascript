@@ -1,5 +1,9 @@
 # Bibliotecas
 
+## Placeholder images
+
+[Placecorgi](https://placecorgi.com)
+
 ## History
 
 [History](https://github.com/ReactTraining/history/blob/master/docs/Navigation.md)
