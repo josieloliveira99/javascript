@@ -127,3 +127,13 @@ async function requestPets() {
 >
 
 ```
+
+## Stringify props
+
+```javascript
+
+<pre>
+  <code>{JSON.stringify(props,null,4)}</code>
+</pre>
+
+```
