@@ -248,3 +248,55 @@ class Form extends React.Component {
 }
 
 ```
+
+## URL Error get
+
+apache
+
+```
+
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+```
+
+Webpack / Development
+This section is for everyone who ran into this problem in development using webpack-dev-server.. Just as above, what we need to do it tell Webpack Dev Server to redirect all server requests to /index.html. There are just two properties in your webpack config you need to set to do this, publicPath and historyApiFallback.
+
+```
+publicPath: '/',
+historyApiFallback: true,
+
+...
+webpack config
+...
+
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: './app/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index_bundle.js',
+    publicPath: '/'
+  },
+  module: {
+    rules: [
+      { test: /\.(js)$/, use: 'babel-loader' },
+      { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}
+    ]
+  },
+  devServer: {
+    historyApiFallback: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'app/index.html'
+    })
+  ]
+};
+```
