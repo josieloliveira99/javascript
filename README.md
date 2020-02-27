@@ -4,6 +4,8 @@
 
 [Configuração Rocketseat](https://github.com/Rocketseat/youtube-style-guide-javascript/blob/master/package.json)
 
+[Configuração VSCODE](https://github.com/prettier/prettier-vscode#linter-integrationn)
+
 ## Metismenu
 
 [Metismenu](https://www.npmjs.com/package/react-metismenu)
