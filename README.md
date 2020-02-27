@@ -1,5 +1,9 @@
 # Bibliotecas
 
+## Eslint
+
+[Configuração Rocketseat](https://github.com/Rocketseat/youtube-style-guide-javascript/blob/master/package.json)
+
 ## Metismenu
 
 [Metismenu](https://www.npmjs.com/package/react-metismenu)
